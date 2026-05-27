@@ -76,6 +76,9 @@ See `spikes/anki-docker/` in the myrzka workspace for the spike container.
 | `sync()` | `sync` |
 | `force_upload()` | `forceUpload` ¹ |
 | `force_download()` | `forceDownload` ¹ |
+| `create_backup()` | `createBackup` ² |
 | `call(action, **params)` | any |
 
 ¹ `forceUpload` / `forceDownload` are not in upstream AnkiConnect — they are added by the spike's local patch (`patches/0001-add-forceUpload-forceDownload.patch`).
+
+² `createBackup` is also added by a local patch (`patches/0002-add-createBackup.patch`), separate from the force-sync patch so it can be PR'd to upstream independently.

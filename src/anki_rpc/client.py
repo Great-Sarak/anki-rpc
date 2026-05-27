@@ -136,3 +136,16 @@ class Client:
     def force_download(self) -> None:
         """Download from AnkiWeb, overwriting the local collection. Takes a backup first."""
         self.call("forceDownload")
+
+    def create_backup(self) -> None:
+        """Trigger an immediate backup of the collection.
+
+        Equivalent to Anki's Tools → Create Backup menu item; uses
+        Anki's atomic snapshot logic and its configured rotation /
+        retention policy (Tools → Preferences → Backups).  Blocks
+        until the backup completes.
+
+        This action is not in upstream AnkiConnect — see the spike's
+        `patches/0002-add-createBackup.patch`.
+        """
+        self.call("createBackup")

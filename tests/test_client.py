@@ -150,3 +150,6 @@ class TestSyncOperations:
         client = make_client([err("forceUpload: auth not configured")])
         with pytest.raises(AnkiConnectError, match="auth not configured"):
             client.force_upload()
+
+    def test_create_backup(self, make_client):
+        make_client([ok(None)]).create_backup()
