@@ -74,10 +74,10 @@ def test_add_note_and_find(client: Client):
         deck=DECK,
         model=MODEL_BASIC,
         fields={"Front": "integration-test-q", "Back": "integration-test-a"},
-        tags=["anki-rpc-test"],
+        tags=["anki-skill-testrun-rpc"],
     )
     assert isinstance(note_id, int)
-    found = client.find_notes(f'deck:"{DECK}" tag:anki-rpc-test')
+    found = client.find_notes(f'deck:"{DECK}" tag:anki-skill-testrun-rpc')
     assert note_id in found
 
 
